@@ -13,3 +13,12 @@
 .image-container > h3{
   margin-left: 480px;
 }
+
+.investment-container{
+  display: flex;
+  gap: 30px;
+  margin-left: 320px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
