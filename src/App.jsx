@@ -12,8 +12,8 @@ function App() {
     <>
     <div>
       <Header/>
-      <UserInput purpose1="initial investment" purpose2="annual investment" />
-      <UserInput purpose1="expected return" purpose2="duration" />
+      <UserInput />
+      
     </div>
     </>
   )

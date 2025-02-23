@@ -1,18 +1,41 @@
+import { useState } from 'react';
 import '../App.css'
 
 
-function UserInput ( props ) {
+
+function UserInput() {
+    const [userInput, setuserInput] = useState({
+        InitialInvestment: 1000,
+        AnnualInvestment: 20000,
+        ExpectedReturns: 3000,
+        Duration: 10
+    })
+
+
+
     return (
         <section>
             <div className="investment-container">
-                <p>
-                    <label htmlFor="">{props.purpose1}</label>
-                    <input type="number" required />
-                </p>
-                <p>
-                    <label htmlFor="">{props.purpose2}</label>
-                    <input type="number" required />
-                </p>
+                <div>
+                    <p>
+                        <label htmlFor="">Initial investment</label>
+                        <input type="number" required />
+                    </p>
+                    <p>
+                        <label htmlFor="">Anual investment</label>
+                        <input type="number" required />
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <label htmlFor="">Expected returns</label>
+                        <input type="number" required />
+                    </p>
+                    <p>
+                        <label htmlFor="">Duration</label>
+                        <input type="number" required />
+                    </p>
+                </div>
             </div>
         </section>
     )
