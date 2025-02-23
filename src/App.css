@@ -1,0 +1,15 @@
+.invest-img{
+  height: 220px;
+  margin-left: 300px;
+  padding-top: 0px;
+  margin-top: -210px;
+  width: 650px;
+}
+
+.image-container{
+  margin-top: 0px;
+}
+
+.image-container > h3{
+  margin-left: 480px;
+}
