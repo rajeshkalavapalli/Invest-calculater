@@ -1,24 +1,253 @@
-.invest-img{
-  height: 220px;
-  margin-left: 300px;
-  padding-top: 0px;
-  margin-top: -210px;
-  width: 650px;
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-.image-container{
-  margin-top: 0px;
-}
-
-.image-container > h3{
-  margin-left: 480px;
-}
-
-.investment-container{
+/* Body - Gradient Background with Blur */
+body {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  min-height: 100vh;
   display: flex;
-  gap: 30px;
-  margin-left: 320px;
+  justify-content: center;
   align-items: center;
-  font-size: 18px;
+  padding: 20px;
+}
+
+/* Main App Container */
+div {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+}
+
+/* Header */
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invest-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+h2, th {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  color: #443627; /* Brown for headings */
+}
+
+/* Table Headings */
+th {
+  font-size: 16px;
   font-weight: bold;
+  color: #443627;
+}
+
+/* Investment Form */
+.investment-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  color: white;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Error Message */
+p.error {
+  color: #ff4b5c;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Results Table */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll on mobile */
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+thead {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+th {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Fully Responsive Design */
+@media (max-width: 768px) {
+  div {
+    width: 90%; /* Slightly smaller width for mobile */
+    padding: 15px;
+  }
+
+  h2, th {
+    font-size: 20px; /* Smaller headings */
+  }
+
+  .investment-container {
+    flex-direction: column; /* Stack inputs in one column */
+    gap: 10px;
+  }
+
+  p {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2, th {
+    font-size: 18px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+}
+
+/* Wrap table inside a scrollable container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;  /* Enables horizontal scroll */
+  display: block;
+}
+
+/* Ensure the table is responsive */
+table {
+  width: 100%;
+  min-width: 600px;  /* Prevents columns from squishing */
+  border-collapse: collapse;
+}
+
+/* Adjust font sizes and padding for mobile */
+@media (max-width: 600px) {
+  th, td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+
+/* Make table scrollable */
+.table-container {
+  width: 100%;
+  overflow-x: auto;  /* Enables horizontal scrolling */
+  display: block;
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on mobile */
+}
+
+/* Prevent columns from shrinking */
+table {
+  width: 100%;
+  min-width: 600px;  /* Ensures all columns fit */
+  border-collapse: collapse;
+}
+
+/* Adjust font size and spacing for mobile */
+@media (max-width: 600px) {
+  th, td {
+    font-size: 12px;   /* Smaller text */
+    padding: 6px;      /* Reduce padding */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  table {
+    min-width: 100%; /* Ensure table expands */
+  }
 }
